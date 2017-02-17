@@ -8,8 +8,14 @@
 
 import UIKit
 
-class MemberTableViewCell: UITableViewCell {
+protocol cellDelegate: class {
+    
+    func sendLeadEnabledCell(leadEnabledCell: MemberTableViewCell) -> ()
+    
+}
 
+class MemberTableViewCell: UITableViewCell {
+    
     
     @IBOutlet weak var labelName: UILabel!
     
@@ -17,16 +23,31 @@ class MemberTableViewCell: UITableViewCell {
     
     @IBOutlet weak var txtVoterId: UITextField!
     
+    @IBOutlet weak var leadCheckBoxButton: UIButton!
+    
+    weak var delegate:cellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
+    
+    @IBAction func leadCheckBoxSelected(_ sender: Any) {
+        
+      leadCheckBoxButton.setBackgroundImage(UIImage(named:"checked.png"), for: UIControlState.normal)
+            
+            delegate?.sendLeadEnabledCell(leadEnabledCell: self)
+        
+    }
+    
 }

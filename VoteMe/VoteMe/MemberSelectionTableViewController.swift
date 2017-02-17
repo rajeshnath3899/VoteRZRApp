@@ -19,7 +19,6 @@ class MemberSelectionTableViewController: UITableViewController , DataSelectedDe
     
     @IBOutlet weak var labelNoOfOthers: UILabel!
     
-    
     var generate: FormGenerator?
     var isFatherPresent: Bool = true
     var isMotherPresent: Bool = true
@@ -27,7 +26,6 @@ class MemberSelectionTableViewController: UITableViewController , DataSelectedDe
     var noOfDaughters: Int = 0
     var noOfOthers: Int = 0
     
-   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,7 +72,6 @@ class MemberSelectionTableViewController: UITableViewController , DataSelectedDe
             
         case 2:
             
-            
             if cell.accessoryType == .checkmark {
                 
                 cell.accessoryType = .none
@@ -82,7 +79,6 @@ class MemberSelectionTableViewController: UITableViewController , DataSelectedDe
                 isFatherPresent = false
                 
             }
-            
             else if cell.accessoryType == .none {
                 
                 cell.accessoryType = .checkmark
@@ -175,8 +171,6 @@ class MemberSelectionTableViewController: UITableViewController , DataSelectedDe
                 
             }
             
-            
-            
         default:
             
             print("default")
@@ -216,7 +210,6 @@ class MemberSelectionTableViewController: UITableViewController , DataSelectedDe
         
         
     }
-    
     
     func createVoterList(father: Bool, mother: Bool, sons: Int, daughter: Int, others: Int) -> MemberList {
         

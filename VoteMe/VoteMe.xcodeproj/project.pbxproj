@@ -17,6 +17,13 @@
 		84469A871DCE36220021A841 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469A861DCE36220021A841 /* MemberTableViewCell.swift */; };
 		84469A891DCE47A10021A841 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469A881DCE47A10021A841 /* Data.swift */; };
 		84469A8E1DCE515B0021A841 /* FormGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469A8D1DCE515B0021A841 /* FormGenerator.swift */; };
+		844C966D1E3C7EBC00E1B196 /* LeadVoterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C966C1E3C7EBC00E1B196 /* LeadVoterTableViewController.swift */; };
+		844C966F1E3C804500E1B196 /* VoterMembesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C966E1E3C804500E1B196 /* VoterMembesTableViewController.swift */; };
+		8473253D1E4F011900DE103A /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 8473253C1E4F011900DE103A /* checked.png */; };
+		8473253F1E4F012100DE103A /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 8473253E1E4F012100DE103A /* unchecked.png */; };
+		847325451E4F326A00DE103A /* address.png in Resources */ = {isa = PBXBuildFile; fileRef = 847325441E4F326A00DE103A /* address.png */; };
+		847325471E4F338B00DE103A /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847325461E4F338B00DE103A /* AddressViewController.swift */; };
+		847325491E4F655100DE103A /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 847325481E4F655100DE103A /* save.png */; };
 		8479510F1DBCFB13004B4E47 /* sample_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 8479510E1DBCFB13004B4E47 /* sample_banner.png */; };
 		847951141DBD00C0004B4E47 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847951131DBD00C0004B4E47 /* CounterViewController.swift */; };
 		84C2D8E71DCD76B500981A13 /* MemberSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8E61DCD76B500981A13 /* MemberSelectionTableViewController.swift */; };
@@ -58,6 +65,13 @@
 		84469A861DCE36220021A841 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemberTableViewCell.swift; path = ../MemberTableViewCell.swift; sourceTree = "<group>"; };
 		84469A881DCE47A10021A841 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		84469A8D1DCE515B0021A841 /* FormGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormGenerator.swift; sourceTree = "<group>"; };
+		844C966C1E3C7EBC00E1B196 /* LeadVoterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadVoterTableViewController.swift; sourceTree = "<group>"; };
+		844C966E1E3C804500E1B196 /* VoterMembesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoterMembesTableViewController.swift; sourceTree = "<group>"; };
+		8473253C1E4F011900DE103A /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		8473253E1E4F012100DE103A /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
+		847325441E4F326A00DE103A /* address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = address.png; sourceTree = "<group>"; };
+		847325461E4F338B00DE103A /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
+		847325481E4F655100DE103A /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		8479510E1DBCFB13004B4E47 /* sample_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_banner.png; sourceTree = "<group>"; };
 		847951131DBD00C0004B4E47 /* CounterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
 		84C2D8E61DCD76B500981A13 /* MemberSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberSelectionTableViewController.swift; sourceTree = "<group>"; };
@@ -117,10 +131,14 @@
 				84469A861DCE36220021A841 /* MemberTableViewCell.swift */,
 				841C05061DBB995900E30DE8 /* ViewController.swift */,
 				841C05081DBB995A00E30DE8 /* Main.storyboard */,
+				847325461E4F338B00DE103A /* AddressViewController.swift */,
+				844C966E1E3C804500E1B196 /* VoterMembesTableViewController.swift */,
+				844C966C1E3C7EBC00E1B196 /* LeadVoterTableViewController.swift */,
 				84C2D8EA1DCD869C00981A13 /* MemberEntryTableViewController.swift */,
 				84C2D8E81DCD790A00981A13 /* MembersCountTableViewController.swift */,
 				84C2D8E61DCD76B500981A13 /* MemberSelectionTableViewController.swift */,
 				847951131DBD00C0004B4E47 /* CounterViewController.swift */,
+				8473253B1E4EFFDC00DE103A /* images */,
 				84469A8C1DCE482B0021A841 /* Model */,
 				84469A8F1DCE5CD10021A841 /* Helpers */,
 				841C050B1DBB995A00E30DE8 /* Assets.xcassets */,
@@ -163,6 +181,18 @@
 				84469A8D1DCE515B0021A841 /* FormGenerator.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		8473253B1E4EFFDC00DE103A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8473253C1E4F011900DE103A /* checked.png */,
+				847325441E4F326A00DE103A /* address.png */,
+				8473253E1E4F012100DE103A /* unchecked.png */,
+				847325481E4F655100DE103A /* save.png */,
+			);
+			name = images;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +302,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8473253D1E4F011900DE103A /* checked.png in Resources */,
 				841C050F1DBB995A00E30DE8 /* LaunchScreen.storyboard in Resources */,
+				847325491E4F655100DE103A /* save.png in Resources */,
 				841C050C1DBB995A00E30DE8 /* Assets.xcassets in Resources */,
 				841C050A1DBB995A00E30DE8 /* Main.storyboard in Resources */,
+				8473253F1E4F012100DE103A /* unchecked.png in Resources */,
+				847325451E4F326A00DE103A /* address.png in Resources */,
 				8479510F1DBCFB13004B4E47 /* sample_banner.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,11 +337,14 @@
 				84469A8E1DCE515B0021A841 /* FormGenerator.swift in Sources */,
 				84C2D8EB1DCD869C00981A13 /* MemberEntryTableViewController.swift in Sources */,
 				84C2D8E91DCD790A00981A13 /* MembersCountTableViewController.swift in Sources */,
+				847325471E4F338B00DE103A /* AddressViewController.swift in Sources */,
 				841C05071DBB995900E30DE8 /* ViewController.swift in Sources */,
 				84469A871DCE36220021A841 /* MemberTableViewCell.swift in Sources */,
 				847951141DBD00C0004B4E47 /* CounterViewController.swift in Sources */,
 				841C05051DBB995900E30DE8 /* AppDelegate.swift in Sources */,
 				84469A891DCE47A10021A841 /* Data.swift in Sources */,
+				844C966F1E3C804500E1B196 /* VoterMembesTableViewController.swift in Sources */,
+				844C966D1E3C7EBC00E1B196 /* LeadVoterTableViewController.swift in Sources */,
 				84C2D8E71DCD76B500981A13 /* MemberSelectionTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
