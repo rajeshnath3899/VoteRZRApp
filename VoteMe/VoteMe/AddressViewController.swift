@@ -8,8 +8,21 @@
 
 import UIKit
 
-class AddressViewController: UIViewController {
+protocol AddresEntry: class {
+    
+    func addressEntered(address: [String : String],completion: @escaping  (() -> Void)) ->()
+    
+}
 
+
+class AddressViewController: UIViewController {
+    @IBOutlet weak var wardNoTextField: UITextField!
+    @IBOutlet weak var wardNameTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextView!
+    
+    weak var delegate:AddresEntry?
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +53,15 @@ class AddressViewController: UIViewController {
     
     
     @IBAction func addAddress(_ sender: Any) {
+        
+        self.delegate?.addressEntered(address: [VoterModelKey.address.rawValue : self.addressTextField.text,VoterModelKey.wardNo.rawValue : self.wardNameTextField.text!, VoterModelKey.wardName.rawValue : self.wardNameTextField.text!], completion: { 
+            
+            self.dismiss(animated: true, completion: nil)
+
+            
+        })
+        
+        /*self.delegate?.addressEntered(address: [VoterModelKey.address.rawValue : self.addressTextField.text,VoterModelKey.wardNo.rawValue : self.wardNameTextField.text!, VoterModelKey.wardName.rawValue : self.wardNameTextField.text!])*/
         
         
         

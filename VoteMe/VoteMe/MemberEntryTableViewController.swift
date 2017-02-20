@@ -8,15 +8,18 @@
 
 import UIKit
 
-class MemberEntryTableViewController: UITableViewController, cellDelegate {
+class MemberEntryTableViewController: UITableViewController, cellDelegate,
+AddresEntry {
 
     var members: MemberList?
     var totalRows: Int = 0
     var labelNames: [String] = [""]
     var leadIndex: Int = 0
     var previousLeadEnabledCell: MemberTableViewCell?
-
-   
+    var addressDictionary: [String : String] = [:]
+    var leadDictionary: [String : String] = [:]
+    var memberListDictionary: [[String : String]] = []
+    var entryCellsList : [MemberTableViewCell] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +31,7 @@ class MemberEntryTableViewController: UITableViewController, cellDelegate {
             
         }
         
-        
-        
-    
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -60,22 +61,41 @@ class MemberEntryTableViewController: UITableViewController, cellDelegate {
     
     func address() {
         
-        let addressViewController = self.storyboard?.instantiateViewController(withIdentifier: "address")
-        
-        self.navigationController?.present(addressViewController!, animated: true, completion: nil)
+        let addressViewController: AddressViewController = self.storyboard?.instantiateViewController(withIdentifier: "address") as! AddressViewController
+        addressViewController.delegate = self
+        self.navigationController?.present(addressViewController, animated: true, completion: nil)
         
         
     }
     
     func save () {
         
+        
+        // retreive the text values from the textFields
+        
+        leadDictionary = retriveLeadValuesFromCells(leadCell: previousLeadEnabledCell!)
+        
+        memberListDictionary = retriveMemberValuesFromCells(memberCells: entryCellsList)
+        
+        
         //Call the webservice API
         
-        let alert = UIAlertController(title: "", message: "Voter Saved", preferredStyle: UIAlertControllerStyle.alert)
+        VMServiceLayer.sharedManager().addVoterService(leadVoterId: leadDictionary[VoterModelKey.leadVoterId.rawValue]!, leadVoterName: leadDictionary[VoterModelKey.leadName.rawValue]!, leadRole: leadDictionary[VoterModelKey.leadRole.rawValue]!, address: addressDictionary, members: memberListDictionary) { (response) in
+            
+            if response == true {
+                
+                let alert = VMUtil.createAlert(with: "Status", message: "Voter Saved", style: UIAlertControllerStyle.alert, actionStyle: UIAlertActionStyle.default)
+                
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            
+            
+            
+        }
         
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         
-        self.present(alert, animated: true, completion: nil)
+       
         
     }
     
@@ -107,7 +127,12 @@ class MemberEntryTableViewController: UITableViewController, cellDelegate {
         cell.labelName.text = labelNames[indexPath.row]
         cell.delegate = self
         
-
+        if cell != previousLeadEnabledCell {
+        
+        entryCellsList.append(cell)
+            
+        }
+        
         
         return cell
     }
@@ -117,7 +142,7 @@ class MemberEntryTableViewController: UITableViewController, cellDelegate {
         let leadIndexPath = self.tableView.indexPath(for: leadEnabledCell)
         
         leadIndex = (leadIndexPath?.row)!
-        
+       
         
         if let previousLeadEnabledCell = previousLeadEnabledCell  {
             
@@ -133,6 +158,66 @@ class MemberEntryTableViewController: UITableViewController, cellDelegate {
     }
     
     
+   
+    func addressEntered(address: [String : String], completion: @escaping (() -> Void)) {
+        
+        addressDictionary = address
+        
+        completion()
+        
+    }
+
     
+  /*  func addressEntered(address: [String : String]) ->() {
+
+        addressDictionary = address
+        
+    }
+    */
+    
+    func getAddress() -> ([String:String]) {
+        
+        return addressDictionary
+    
+        
+    }
+
+    
+    func retriveMemberValuesFromCells(memberCells: [MemberTableViewCell]) -> [[String : String]] {
+        
+        
+        var memberListDict: [[String : String]] = []
+        
+        for cell in  memberCells {
+            
+            let members = [VoterModelKey.voterId.rawValue:cell.txtVoterId.text,
+                           VoterModelKey.name.rawValue:cell.txtName.text,
+                           VoterModelKey.memberRole.rawValue:cell.labelName.text,
+                           ]
+            
+            memberListDict.append(members as! [String : String])
+            
+        }
+        
+        return memberListDict
+        
+    }
+    
+    
+    func retriveLeadValuesFromCells(leadCell: MemberTableViewCell) -> [String : String]  {
+        
+        var leadDict: [String : String] = [:]
+
+        
+        let leadId: String = leadCell.txtVoterId.text!
+        let leadName: String = leadCell.txtName.text!
+        let leadRole: String = leadCell.labelName.text!
+        
+        leadDict = [VoterModelKey.leadVoterId.rawValue:leadId,
+                          VoterModelKey.leadName.rawValue:leadName,
+                          VoterModelKey.leadRole.rawValue:leadRole]
+        
+        return leadDict
+    }
     
 }

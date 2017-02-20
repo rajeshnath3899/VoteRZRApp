@@ -15,7 +15,7 @@
 		841C051A1DBB995A00E30DE8 /* VoteMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C05191DBB995A00E30DE8 /* VoteMeTests.swift */; };
 		841C05251DBB995A00E30DE8 /* VoteMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C05241DBB995A00E30DE8 /* VoteMeUITests.swift */; };
 		84469A871DCE36220021A841 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469A861DCE36220021A841 /* MemberTableViewCell.swift */; };
-		84469A891DCE47A10021A841 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469A881DCE47A10021A841 /* Data.swift */; };
+		84469A891DCE47A10021A841 /* VMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469A881DCE47A10021A841 /* VMViewModel.swift */; };
 		84469A8E1DCE515B0021A841 /* FormGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469A8D1DCE515B0021A841 /* FormGenerator.swift */; };
 		844C966D1E3C7EBC00E1B196 /* LeadVoterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C966C1E3C7EBC00E1B196 /* LeadVoterTableViewController.swift */; };
 		844C966F1E3C804500E1B196 /* VoterMembesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C966E1E3C804500E1B196 /* VoterMembesTableViewController.swift */; };
@@ -29,6 +29,14 @@
 		84C2D8E71DCD76B500981A13 /* MemberSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8E61DCD76B500981A13 /* MemberSelectionTableViewController.swift */; };
 		84C2D8E91DCD790A00981A13 /* MembersCountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8E81DCD790A00981A13 /* MembersCountTableViewController.swift */; };
 		84C2D8EB1DCD869C00981A13 /* MemberEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8EA1DCD869C00981A13 /* MemberEntryTableViewController.swift */; };
+		84FFCCC41E57EEE000A8A46C /* VMConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FFCCC31E57EEE000A8A46C /* VMConfiguration.swift */; };
+		84FFCCC61E57EF6900A8A46C /* VMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FFCCC51E57EF6900A8A46C /* VMConstants.swift */; };
+		84FFCCC81E57EFC500A8A46C /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FFCCC71E57EFC500A8A46C /* PlistManager.swift */; };
+		84FFCCCA1E57F03A00A8A46C /* VoteMe.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84FFCCC91E57F03A00A8A46C /* VoteMe.plist */; };
+		84FFCCCC1E57F19600A8A46C /* VMServiceRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FFCCCB1E57F19600A8A46C /* VMServiceRequestManager.swift */; };
+		84FFCCCE1E57F37D00A8A46C /* VMServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FFCCCD1E57F37D00A8A46C /* VMServiceLayer.swift */; };
+		84FFCCD11E57F55400A8A46C /* VMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FFCCD01E57F55400A8A46C /* VMModel.swift */; };
+		84FFCCD31E5889A700A8A46C /* VMUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FFCCD21E5889A700A8A46C /* VMUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +71,7 @@
 		841C05241DBB995A00E30DE8 /* VoteMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteMeUITests.swift; sourceTree = "<group>"; };
 		841C05261DBB995A00E30DE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84469A861DCE36220021A841 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemberTableViewCell.swift; path = ../MemberTableViewCell.swift; sourceTree = "<group>"; };
-		84469A881DCE47A10021A841 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		84469A881DCE47A10021A841 /* VMViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMViewModel.swift; sourceTree = "<group>"; };
 		84469A8D1DCE515B0021A841 /* FormGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormGenerator.swift; sourceTree = "<group>"; };
 		844C966C1E3C7EBC00E1B196 /* LeadVoterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadVoterTableViewController.swift; sourceTree = "<group>"; };
 		844C966E1E3C804500E1B196 /* VoterMembesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoterMembesTableViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +85,14 @@
 		84C2D8E61DCD76B500981A13 /* MemberSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberSelectionTableViewController.swift; sourceTree = "<group>"; };
 		84C2D8E81DCD790A00981A13 /* MembersCountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersCountTableViewController.swift; sourceTree = "<group>"; };
 		84C2D8EA1DCD869C00981A13 /* MemberEntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberEntryTableViewController.swift; sourceTree = "<group>"; };
+		84FFCCC31E57EEE000A8A46C /* VMConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMConfiguration.swift; sourceTree = "<group>"; };
+		84FFCCC51E57EF6900A8A46C /* VMConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMConstants.swift; sourceTree = "<group>"; };
+		84FFCCC71E57EFC500A8A46C /* PlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
+		84FFCCC91E57F03A00A8A46C /* VoteMe.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VoteMe.plist; sourceTree = "<group>"; };
+		84FFCCCB1E57F19600A8A46C /* VMServiceRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMServiceRequestManager.swift; sourceTree = "<group>"; };
+		84FFCCCD1E57F37D00A8A46C /* VMServiceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMServiceLayer.swift; sourceTree = "<group>"; };
+		84FFCCD01E57F55400A8A46C /* VMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMModel.swift; sourceTree = "<group>"; };
+		84FFCCD21E5889A700A8A46C /* VMUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				841C05041DBB995900E30DE8 /* AppDelegate.swift */,
+				84FFCCC51E57EF6900A8A46C /* VMConstants.swift */,
 				84469A861DCE36220021A841 /* MemberTableViewCell.swift */,
 				841C05061DBB995900E30DE8 /* ViewController.swift */,
 				841C05081DBB995A00E30DE8 /* Main.storyboard */,
@@ -138,13 +155,16 @@
 				84C2D8E81DCD790A00981A13 /* MembersCountTableViewController.swift */,
 				84C2D8E61DCD76B500981A13 /* MemberSelectionTableViewController.swift */,
 				847951131DBD00C0004B4E47 /* CounterViewController.swift */,
+				84FFCCC21E57EE9B00A8A46C /* Transaction Layer */,
 				8473253B1E4EFFDC00DE103A /* images */,
-				84469A8C1DCE482B0021A841 /* Model */,
+				84FFCCCF1E57F4D900A8A46C /* Model */,
+				84469A8C1DCE482B0021A841 /* ViewModel */,
 				84469A8F1DCE5CD10021A841 /* Helpers */,
 				841C050B1DBB995A00E30DE8 /* Assets.xcassets */,
 				8479510E1DBCFB13004B4E47 /* sample_banner.png */,
 				841C050D1DBB995A00E30DE8 /* LaunchScreen.storyboard */,
 				841C05101DBB995A00E30DE8 /* Info.plist */,
+				84FFCCC91E57F03A00A8A46C /* VoteMe.plist */,
 			);
 			path = VoteMe;
 			sourceTree = "<group>";
@@ -167,17 +187,20 @@
 			path = VoteMeUITests;
 			sourceTree = "<group>";
 		};
-		84469A8C1DCE482B0021A841 /* Model */ = {
+		84469A8C1DCE482B0021A841 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				84469A881DCE47A10021A841 /* Data.swift */,
+				84469A881DCE47A10021A841 /* VMViewModel.swift */,
 			);
-			name = Model;
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		84469A8F1DCE5CD10021A841 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				84FFCCC71E57EFC500A8A46C /* PlistManager.swift */,
+				84FFCCC31E57EEE000A8A46C /* VMConfiguration.swift */,
+				84FFCCD21E5889A700A8A46C /* VMUtil.swift */,
 				84469A8D1DCE515B0021A841 /* FormGenerator.swift */,
 			);
 			name = Helpers;
@@ -193,6 +216,23 @@
 			);
 			name = images;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		84FFCCC21E57EE9B00A8A46C /* Transaction Layer */ = {
+			isa = PBXGroup;
+			children = (
+				84FFCCCD1E57F37D00A8A46C /* VMServiceLayer.swift */,
+				84FFCCCB1E57F19600A8A46C /* VMServiceRequestManager.swift */,
+			);
+			name = "Transaction Layer";
+			sourceTree = "<group>";
+		};
+		84FFCCCF1E57F4D900A8A46C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84FFCCD01E57F55400A8A46C /* VMModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +345,7 @@
 				8473253D1E4F011900DE103A /* checked.png in Resources */,
 				841C050F1DBB995A00E30DE8 /* LaunchScreen.storyboard in Resources */,
 				847325491E4F655100DE103A /* save.png in Resources */,
+				84FFCCCA1E57F03A00A8A46C /* VoteMe.plist in Resources */,
 				841C050C1DBB995A00E30DE8 /* Assets.xcassets in Resources */,
 				841C050A1DBB995A00E30DE8 /* Main.storyboard in Resources */,
 				8473253F1E4F012100DE103A /* unchecked.png in Resources */,
@@ -334,17 +375,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84FFCCC81E57EFC500A8A46C /* PlistManager.swift in Sources */,
 				84469A8E1DCE515B0021A841 /* FormGenerator.swift in Sources */,
+				84FFCCD11E57F55400A8A46C /* VMModel.swift in Sources */,
+				84FFCCCE1E57F37D00A8A46C /* VMServiceLayer.swift in Sources */,
+				84FFCCD31E5889A700A8A46C /* VMUtil.swift in Sources */,
 				84C2D8EB1DCD869C00981A13 /* MemberEntryTableViewController.swift in Sources */,
 				84C2D8E91DCD790A00981A13 /* MembersCountTableViewController.swift in Sources */,
 				847325471E4F338B00DE103A /* AddressViewController.swift in Sources */,
 				841C05071DBB995900E30DE8 /* ViewController.swift in Sources */,
+				84FFCCCC1E57F19600A8A46C /* VMServiceRequestManager.swift in Sources */,
+				84FFCCC41E57EEE000A8A46C /* VMConfiguration.swift in Sources */,
 				84469A871DCE36220021A841 /* MemberTableViewCell.swift in Sources */,
 				847951141DBD00C0004B4E47 /* CounterViewController.swift in Sources */,
 				841C05051DBB995900E30DE8 /* AppDelegate.swift in Sources */,
-				84469A891DCE47A10021A841 /* Data.swift in Sources */,
+				84469A891DCE47A10021A841 /* VMViewModel.swift in Sources */,
 				844C966F1E3C804500E1B196 /* VoterMembesTableViewController.swift in Sources */,
 				844C966D1E3C7EBC00E1B196 /* LeadVoterTableViewController.swift in Sources */,
+				84FFCCC61E57EF6900A8A46C /* VMConstants.swift in Sources */,
 				84C2D8E71DCD76B500981A13 /* MemberSelectionTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
