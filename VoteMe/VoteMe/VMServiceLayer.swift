@@ -38,6 +38,37 @@ struct  VMServiceLayer {
     
     
     
+    
+       func getVoterListService(by limit: Int ,with offset: Int , completion: @escaping ([Voter]?) -> Void) {
+        VMServiceRequestManager.sharedManager().getVoterList(by: limit, with: offset) { (response) in
+            
+            var voters: [Voter] = []
+            
+            if let responseData: [[String:Any]] = response as! [[String : Any]]? {
+                
+                for item: [String:Any] in responseData {
+                    
+                    let voter: Voter = Voter(inDict: item)
+                    
+                    voters.append(voter)
+                    
+                }
+                
+                completion(voters)
+                
+                
+            } else {
+                completion(nil)
+            }
+            
+            
+        }
+    }
+
+    
+    
+    
+    
     //MARK:- Register
     /*
      Handle user registration

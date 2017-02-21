@@ -24,14 +24,14 @@ struct Voter  {
         
         self.leadVoterId = inDict[VoterModelKey.leadVoterId.rawValue] as! String? ?? ""
         
-        self.leadVoterName = inDict[VoterModelKey.leadName.rawValue] as! String? ?? ""
+        self.leadVoterName = inDict[VoterModelKey.name.rawValue] as! String? ?? ""
         
-        self.leadVoterRole = inDict[VoterModelKey.leadRole.rawValue] as! String? ?? ""
+        self.leadVoterRole = inDict[VoterModelKey.role.rawValue] as! String? ?? ""
         self.address = inDict[VoterModelKey.address.rawValue] as! String? ?? ""
         self.wardName = inDict[VoterModelKey.wardName.rawValue] as! String? ?? ""
         self.wardNo = inDict[VoterModelKey.wardNo.rawValue] as! String? ?? ""
         
-        let memberList = inDict[VoterModelKey.members.rawValue] as! [[String:String]]
+        let memberList = inDict[VoterModelKey.member.rawValue] as! [[String:String]]
         
         var identities = [Identity]()
         
@@ -58,8 +58,8 @@ struct Identity {
     init (inDict: [String : String]) {
         
         self.voterId = inDict[VoterModelKey.voterId.rawValue] ?? ""
-        self.name = inDict[VoterModelKey.name.rawValue] ?? ""
-        self.memberRole = inDict[VoterModelKey.memberRole.rawValue] ?? ""
+        self.name = inDict[VoterModelKey.voterName.rawValue] ?? ""
+        self.memberRole = inDict[VoterModelKey.familyRole.rawValue] ?? ""
         
     }
 

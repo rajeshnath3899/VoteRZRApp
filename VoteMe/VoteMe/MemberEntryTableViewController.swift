@@ -80,7 +80,7 @@ AddresEntry {
         
         //Call the webservice API
         
-        VMServiceLayer.sharedManager().addVoterService(leadVoterId: leadDictionary[VoterModelKey.leadVoterId.rawValue]!, leadVoterName: leadDictionary[VoterModelKey.leadName.rawValue]!, leadRole: leadDictionary[VoterModelKey.leadRole.rawValue]!, address: addressDictionary, members: memberListDictionary) { (response) in
+        VMServiceLayer.sharedManager().addVoterService(leadVoterId: leadDictionary[VoterModelKey.leadVoterId.rawValue]!, leadVoterName: leadDictionary[VoterModelKey.name.rawValue]!, leadRole: leadDictionary[VoterModelKey.role.rawValue]!, address: addressDictionary, members: memberListDictionary) { (response) in
             
             if response == true {
                 
@@ -192,7 +192,7 @@ AddresEntry {
             
             let members = [VoterModelKey.voterId.rawValue:cell.txtVoterId.text,
                            VoterModelKey.name.rawValue:cell.txtName.text,
-                           VoterModelKey.memberRole.rawValue:cell.labelName.text,
+                           VoterModelKey.familyRole.rawValue:cell.labelName.text,
                            ]
             
             memberListDict.append(members as! [String : String])
@@ -214,8 +214,8 @@ AddresEntry {
         let leadRole: String = leadCell.labelName.text!
         
         leadDict = [VoterModelKey.leadVoterId.rawValue:leadId,
-                          VoterModelKey.leadName.rawValue:leadName,
-                          VoterModelKey.leadRole.rawValue:leadRole]
+                          VoterModelKey.name.rawValue:leadName,
+                          VoterModelKey.role.rawValue:leadRole]
         
         return leadDict
     }

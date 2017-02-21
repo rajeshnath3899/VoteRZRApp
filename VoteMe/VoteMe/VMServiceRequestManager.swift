@@ -108,13 +108,13 @@ class VMServiceRequestManager : NSObject, URLSessionDelegate {
         
         let postBody = [VoterModelKey.voters.rawValue :
             [VoterModelKey.leadVoterId.rawValue:leadVoterId,
-             VoterModelKey.leadName.rawValue:leadVoterName,
-             VoterModelKey.leadRole.rawValue:leadRole,
+             VoterModelKey.name.rawValue:leadVoterName,
+             VoterModelKey.role.rawValue:leadRole,
              VoterModelKey.address.rawValue: addressDetail[VoterModelKey.address.rawValue
                 ]!,
              VoterModelKey.wardNo.rawValue: addressDetail[VoterModelKey.wardNo.rawValue]!,
              VoterModelKey.wardName.rawValue: addressDetail[VoterModelKey.wardName.rawValue]!,
-             VoterModelKey.members.rawValue: members] as [String : Any]]        
+             VoterModelKey.member.rawValue: members] as [String : Any]]        
         do {
             try runPOSTWithBody(postBody, endPoint: UrlEndPoints.AddVoter.rawValue, responseDataKey: VoterModelKey.status.rawValue, completionHandler: completionHandler)
         } catch {
@@ -126,6 +126,22 @@ class VMServiceRequestManager : NSObject, URLSessionDelegate {
         
     }
     
+    
+    
+    func getVoterList(by limit: Int ,with offset: Int , completion: @escaping (AnyObject?) -> Void) {
+        
+        let postBody = [VoterModelKey.limit.rawValue: limit,
+                        VoterModelKey.offset.rawValue: offset]
+        
+        do {
+            try runPOSTWithBody(postBody, endPoint: UrlEndPoints.GetVoterList.rawValue, responseDataKey: VoterModelKey.voters.rawValue, completionHandler: completion)
+        } catch {
+            print("\(ExceptionMessage.userIsNotRegister.rawValue) \(error)")
+            
+        }
+        
+        
+    }
 
 
     

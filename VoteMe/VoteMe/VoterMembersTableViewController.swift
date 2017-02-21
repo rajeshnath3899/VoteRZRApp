@@ -8,8 +8,11 @@
 
 import UIKit
 
-class VoterMembesTableViewController: UITableViewController {
+class VoterMembersTableViewController: UITableViewController {
 
+    
+    var members: Identity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,15 +40,19 @@ class VoterMembesTableViewController: UITableViewController {
         return 1
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "memberDetail", for: indexPath) as! MembersDetailTableViewCell
 
         // Configure the cell...
-
+        
+        cell.memberName.text = members?.name
+        cell.memberVoterId.text = members?.voterId
+        cell.memberRole.text = members?.memberRole
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

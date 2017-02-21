@@ -10,14 +10,40 @@ import UIKit
 
 class LeadVoterTableViewController: UITableViewController {
 
+    var totalVoters: Int = 1
+    var votersList: [Voter]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        VMServiceLayer.sharedManager().getVoterListService(by: 2, with: 0) { (response) in
+            
+            guard let voterCount: Int = response?.count , let voters: [Voter] = response else {
+                
+                return
+                
+            }
+            
+            self.totalVoters = voterCount
+            self.votersList = voters
+            
+            self.tableView.reloadData()
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,18 +60,39 @@ class LeadVoterTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return totalVoters
     }
 
-    /*
+    
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListMemberTableViewCell
 
+        guard  let voters = votersList else {
+            
+            return cell
+            
+        }
+       
+        let voter: Voter = voters[indexPath.row]
+        
         // Configure the cell...
+        
+        cell.labelName.text = voter.leadVoterName
+        cell.labelVoterId.text = voter.leadVoterId
+        cell.labelRole.text = voter.leadVoterRole
+        cell.labelWardNo.text = voter.wardNo
+        cell.labelWardName.text = voter.wardName
+        cell.labelAddress.text = voter.address
+        
+        
 
         return cell
     }
-    */
+
+    
+      
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,7 +129,7 @@ class LeadVoterTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -90,6 +137,6 @@ class LeadVoterTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

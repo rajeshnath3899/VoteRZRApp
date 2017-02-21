@@ -35,17 +35,19 @@ enum ErrorKeys: String {
 
 enum VoterModelKey: String {
     case leadVoterId = "leadVoterId"
-    case leadName = "leadName"
-    case leadRole = "leadRole"
+    case role = "role"
     case voterId = "voterId"
     case name = "name"
-    case memberRole = "memberRole"
+    case voterName = "voterName"
+    case familyRole = "familyRole"
     case address = "address"
     case wardName = "wardName"
     case wardNo = "wardNo"
-    case members = "members"
+    case member = "member"
     case status = "status"
     case voters = "voters"
+    case limit = "limit"
+    case offset = "offset"
     
 }
 
@@ -212,7 +214,7 @@ enum LocationKeys :String {
 
 enum UrlEndPoints: String {
     case AddVoter = "voter-add"
-    case FetchVotersList = "voter-list"
+    case GetVoterList = "voter-list"
 }
 
 enum ResponseDataKey: String {
